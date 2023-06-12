@@ -4,9 +4,8 @@ spring:
     name: reddit-service
   datasource:
     url: jdbc:postgresql://localhost:5432/reddit
-#    url: jdbc:postgresql://postgres:5431/reddit
     username: postgres
-    password: Eliya229978
+    password: password
     driver-class-name: org.postgresql.Driver
     name: reddit
   jpa:
@@ -37,39 +36,10 @@ weather:
     url: https://api.weatherapi.com/v1/current.json
     location: London
 
-
-#spring:
-#  application:
-#    name: reddit-service
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/reddit?useSSL=false
-#    username: root
-#    password: Eliya229978
-##    driver-class-name: com.mysql.cj.jdbc.Driver
-#    name: reddit
-#  jpa:
-#    hibernate:
-#      ddl-auto: create
-#      event:
-#        merge:
-#          entity:
-#            listener:
-#              enabled: true
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        create_namespaces: true
-#        format_sql: true
-#    database: mysql
-#    database-platform: org.hibernate.dialect.MySQLDialect
-#    defer-datasource-initialization: true
-#  sql:
-#    init:
-#      mode: always
-#server:
-#  port: 8080
-#
-#weather:
-#  api:
-#    key: 5cbe6ca8ac66447bbc9173923230806
-#    url: https://api.weatherapi.com/v1/current.json
+  # Specify the path of the OpenAPI documentation
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /api-docs

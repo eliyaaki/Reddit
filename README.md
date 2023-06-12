@@ -24,6 +24,10 @@ spring:
 #
 ```
 
+## Swagger UI
+Open your browser at the following URL for Swagger UI (giving REST interface details):
+http://localhost:8080/swagger-ui/index.html
+
 ## initial data
 There is a seed data file located at  ```src/main/resources/data.sql``` .
 You can modify this file according to your specific requirements and data specifications.

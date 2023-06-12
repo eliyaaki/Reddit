@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  postgres:
+    expose:
+      - 5431
+    ports:
+      - 5431:5431
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: reddit
+      POSTGRES_PASSWORD: reddit
+      POSTGRES_DB: reddit
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres:/data/postgres
+    command: -p 5431
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5431/reddit
+      SPRING_DATASOURCE_USERNAME: reddit
+      SPRING_DATASOURCE_PASSWORD: reddit
+    depends_on:
+      - postgres
+
+
+#volumes:
+#  postgres-data:
+
+
+
+#version: '3.8'
+#
+#services:
+#  mysql:
+#    ports:
+#      - "3307:3306"
+#    container_name: mysql
+#    image: mysql:latest
+#    environment:
+#      MYSQL_ROOT_PASSWORD: Eliya229978
+#      MYSQL_DATABASE: reddit
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: Eliya229978
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+#
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    restart: always
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/reddit?useSSL=false
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: Eliya229978
+#    depends_on:
+#      - mysql
+#
+#volumes:
+#  mysql-data:

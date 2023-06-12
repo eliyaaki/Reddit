@@ -1,8 +1,12 @@
 -- Insert dummy data
 -- Users
-INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'john@example.com', 'John', 'Doe', 'password1');
-INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'alice@example.com', 'Alice', 'Smith', 'password2');
-INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'bob@example.com', 'Bob', 'Johnson', 'password3');
+
+--The first password is actually password1, I simply entered the hash of it
+INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'john@example.com', 'John', 'Doe', '$2a$10$XyNvyW7Ea4yOTXxBXVUV/uoD2pONXbslLDMeux8Zvust52Jy8HfGm');
+--The second password is actually password2, I simply entered the hash of it
+INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'alice@example.com', 'Alice', 'Smith', '$2a$10$mymgLAvUOQ42AcquXCQpD.bemlT85tJbSOnNoBEnJ/iNuagZX4LLG');
+--The third password is actually password3, I simply entered the hash of it
+INSERT INTO _users (last_connectivity, email, first_name, last_name, password) VALUES ('2023-06-07', 'bob@example.com', 'Bob', 'Johnson', '$2a$10$2ckKI/RC7VFVeqVI9bR0ceSNjxlMIw2x4Xxy08uyWMrv2kMM/UGqa');
 
 -- Topics
 INSERT INTO topic (description, title) VALUES ('Technology-related discussions', 'Technology');

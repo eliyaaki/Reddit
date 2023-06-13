@@ -24,6 +24,13 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     defer-datasource-initialization: true
+  security:
+    enabled: false
+  web:
+    cors:
+      allowed-origin=*
+      allowed-headers=*
+      allowed-methods=GET,POST,PUT,DELETE
   sql:
     init:
       mode: always

@@ -1,0 +1,19 @@
+# Use a Python base image
+FROM python:3.9-slim-buster
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Install system dependencies
+#RUN apk update && apk add --no-cache build-base
+
+# Copy the Python script to the container
+COPY data_insertion_script.py /app/
+COPY reddit_user_data.csv /app/
+COPY reddit_topic_data.csv /app/
+COPY reddit_post_data.csv /app/
+# Install the required Python packages
+RUN pip install requests pandas
+
+# Run the Python script
+CMD ["python", "data_insertion_script.py"]

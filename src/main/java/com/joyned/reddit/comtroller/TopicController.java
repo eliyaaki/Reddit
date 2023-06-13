@@ -18,6 +18,7 @@ import java.util.List;
 @RequestMapping("/api/v1/topic")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin
 public class TopicController {
     private final TopicService topicService;
 

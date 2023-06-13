@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/post")
 @RequiredArgsConstructor
+@CrossOrigin
 @Slf4j
 public class PostController {
     private final PostService postService;

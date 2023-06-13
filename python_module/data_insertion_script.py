@@ -5,13 +5,15 @@ import requests
 # API endpoint URLs
 
 
-# The application configured to run with docker so the application currently using BASE_URL_DOCKER
+# The application configured to run with docker-compose so the application currently using BASE_URL_DOCKER_COMPOSE
 # when running the script with python itself use the BASE_URL
+# when running the script with docker and the reddit service is run locally throw Java and Maven use BASE_URL_DOCKER
 BASE_URL = 'http://localhost:8080/api/v1'
 BASE_URL_DOCKER = 'http://host.docker.internal:8080/api/v1'
-USERS_URL = f'{BASE_URL_DOCKER}/user/registration'
-TOPICS_URL = f'{BASE_URL_DOCKER}/topic/addTopic'
-POSTS_URL = f'{BASE_URL_DOCKER}/post/addPostToTopic'
+BASE_URL_DOCKER_COMPOSE = 'http://BACKEND:8080/api/v1'
+USERS_URL = f'{BASE_URL_DOCKER_COMPOSE}/user/registration'
+TOPICS_URL = f'{BASE_URL_DOCKER_COMPOSE}/topic/addTopic'
+POSTS_URL = f'{BASE_URL_DOCKER_COMPOSE}/post/addPostToTopic'
 
 # CSV file paths
 USERS_CSV = 'reddit_user_data.csv'

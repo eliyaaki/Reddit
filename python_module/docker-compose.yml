@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  python_script:
+    container_name: SCRIPT
+    build:
+      context: .
+      dockerfile: Dockerfilepy
+    restart: always
+
+networks:
+  default:
+    external:
+      name: MYAPP

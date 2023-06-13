@@ -18,6 +18,7 @@ services:
     command: -p 5431
 
   app:
+    container_name: BACKEND
     build:
       context: .
       dockerfile: Dockerfile
@@ -30,3 +31,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: reddit
     depends_on:
       - postgres
+
+networks:
+  default:
+    external:
+      name: MYAPP

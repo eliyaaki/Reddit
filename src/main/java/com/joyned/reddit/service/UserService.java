@@ -89,7 +89,8 @@ public class UserService {
 
     public String hashPassword(String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder.encode(password);
+        var encodedPassword= encoder.encode(password);
+        return encodedPassword;
     }
 
     public boolean verifyPassword(User user, String password) {
